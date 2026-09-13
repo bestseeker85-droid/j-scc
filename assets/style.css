@@ -112,7 +112,7 @@ section{padding:64px 0} section.tight{padding:40px 0} section.alt{background:var
 .fcmap .tape{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:10px}
 
 .motto{background:var(--hero);color:#fff;border-radius:14px;padding:34px 40px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
-.motto .k{font-family:var(--display);font-weight:700;font-size:clamp(26px,3vw,36px);letter-spacing:.02em;color:#fff;line-height:1.1}
+.motto .k{font-family:var(--display);font-weight:700;font-size:clamp(24px,2.8vw,34px);white-space:nowrap;letter-spacing:.02em;color:#fff;line-height:1.1}
 .motto .k small{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--hero-ey);margin-bottom:6px;font-weight:500}
 .motto p{margin:0;color:var(--hero-sub);font-size:16.5px;line-height:1.75}
 .motto p b{color:#fff}
