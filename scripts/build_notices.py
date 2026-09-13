@@ -152,7 +152,11 @@ def write_article(n, lang, out_dir, pre, post, in_en_dir):
   <div class="body">{md(body)}</div>
   <a class="back" href="{back[0]}">← {back[1]}</a>
 </article></div></section></main>'''
-    io.open(os.path.join(out_dir, f"{n['n']}.html"), "w", encoding="utf-8", newline="\n").write(pre2 + main + post)
+    # 푸터(post)의 내부 링크도 같은 규칙으로 한 단계 위로
+    post2 = re.sub(r'href="\.\./([\w\-]+\.html)"', r'href="../../\1"', post)
+    post2 = re.sub(r'href="(?!https?://|\.\./|#|mailto:)([\w\-]+\.html)"', r'href="../\1"', post2)
+    post2 = re.sub(r'href="en/([\w\-]+\.html)"', r'href="../en/\1"', post2)
+    io.open(os.path.join(out_dir, f"{n['n']}.html"), "w", encoding="utf-8", newline="\n").write(pre2 + main + post2)
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--sample"); ap.add_argument("--out", default=ROOT)
