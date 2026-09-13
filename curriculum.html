@@ -46,12 +46,12 @@
 </div></header>
 <main class="page" lang="ko">
 <section><div class="wrap">
-  <div class="sec-head"><span class="eyebrow">교육</span><h2>교육과정</h2><p>정규 교과는 그대로 두고, 그 위에 비교과 실무 과정을 기초 → 실무(초급) → 실무(중급·특강) 세 단계로 운영합니다.</p></div>
+  <div class="sec-head"><span class="eyebrow">교육</span><h2>교육과정</h2><p>정규 교과는 그대로 두고, 그 위에 비교과 과정을 온라인 이론 기초 → 기초 실습 → 실무(초급) → 실무(중급·특강) 순으로 운영합니다. 이론 기초는 누구나 들을 수 있고, 실습은 분야별로 소자·공정, 회로, 시스템, 검증·측정을 고르게 다룹니다.</p></div>
   <div class="cycle" style="margin-bottom:28px">
-    <div><span class="s">STEP 1</span><b>시뮬레이션</b><span>산업용 EDA 툴로 설계</span></div>
-    <div><span class="s">STEP 2</span><b>레이아웃</b><span>회로를 칩 도면으로</span></div>
-    <div><span class="s">STEP 3</span><b>Tape-out</b><span>칩 제작</span></div>
-    <div><span class="s">STEP 4</span><b>측정</b><span>계측 장비로 검증</span></div>
+    <div><span class="s">STEP 1</span><b>이론 기초</b><span>반도체 물리 · 회로 · 디지털 · 계측 — 온라인 7과목 (2027 공개 예정)</span></div>
+    <div><span class="s">STEP 2</span><b>설계</b><span>소자(TCAD) · 회로(EDA) · 시스템(FPGA · SoC)</span></div>
+    <div><span class="s">STEP 3</span><b>제작</b><span>공정 실습 · MPW 칩 제작 · 패키징 체험</span></div>
+    <div><span class="s">STEP 4</span><b>검증</b><span>계측 · 칩 측정 · 모듈 제작</span></div>
   </div>
   <h3 style="margin:26px 0 10px">전주기 지도: 각 과정이 8대 공정의 어느 단계에 해당하는가</h3>
   <div class="fcmap">
@@ -81,25 +81,26 @@
   <div class="legend"><span class="l3"><i></i>교내에서 직접 실습</span><span class="l2"><i></i>교내 입문 실습 + 외부 시설 심화</span><span class="l1"><i></i>외부 시설 연계 체험 (한국나노기술원 · 나노종합기술원 등)</span></div>
   <div class="tape">설계한 칩은 외부 파운드리(MPW)에서 제작합니다. 돌아온 칩을 측정하고 <b>그 칩으로 모듈을 만드는 데까지</b>가 한 사이클입니다.</div>
 </div>
-  <h3 style="margin:28px 0 10px">트랙별 세 단계 과정</h3>
+  <h3 style="margin:28px 0 10px">분야별 단계 과정</h3>
   <div class="tbl"><table>
-    <tr><th>분야 · 트랙</th><th>기초</th><th>실무 (초급)</th><th>실무 (중급 · 특강)</th></tr>
-    <tr><td class="lv">① 소자 설계 · 공정</td><td>소자특성 · TCAD 툴 기초 · 공정 입문</td><td>소자설계 초급 · 공정실습(일부)</td><td>소자 · 공정 심화(외부특강)</td></tr>
-    <tr><td class="lv">② 회로 — 아날로그 / 혼성</td><td>DC 특성 · 툴 기초</td><td>증폭기 · Op-amp ~ LDO</td><td>ADC · DC/DC</td></tr>
-    <tr><td class="lv">② 회로 — RF</td><td>S-파라미터 · 툴 기초</td><td>LNA · VCO</td><td>송수신기 · Tape-out</td></tr>
-    <tr><td class="lv">③ 시스템 — 디지털</td><td>Verilog · 툴 기초</td><td>FPGA · RISC-V</td><td>NPU · AI 가속기 · SoC</td></tr>
+    <tr><th>분야</th><th>이론 기초 (온라인)</th><th>기초 실습</th><th>실무 (초급)</th><th>실무 (중급 · 특강)</th></tr>
+    <tr><td class="lv">① 소자 설계 · 공정</td><td>반도체 물리 · 소자</td><td>소자 특성 · TCAD 툴 기초 · 공정 입문</td><td>소자 설계 초급 · 공정 실습(일부)</td><td>소자 · 공정 심화 (외부 시설 실습 · 특강)</td></tr>
+    <tr><td class="lv">② 회로 설계 · 제작</td><td>회로이론 · 전자회로 · RF 기초</td><td>DC 특성 · S-파라미터 · EDA 툴 기초</td><td>증폭기 · Op-amp ~ LDO · LNA · VCO · 레이아웃</td><td>ADC · DC/DC · 송수신기 · Tape-out</td></tr>
+    <tr><td class="lv">③ 시스템 설계</td><td>디지털공학 · 컴퓨터구조</td><td>Verilog · 툴 기초</td><td>FPGA · RISC-V</td><td>NPU · AI 가속기 · SoC</td></tr>
+    <tr><td class="lv">④ 검증 · 측정</td><td>계측 기초 · 테스트 개론</td><td>오실로스코프 · DC 전원 기본 측정</td><td>소자 I-V · 회로 성능 · 모듈 측정</td><td>프로브 스테이션 칩 측정 · 와이어 본딩 패키징 (2027~) · 모듈 제작</td></tr>
   </table></div>
-  <p class="note">④ 검증·측정은 네 트랙이 함께 듣는 측정·제작 과정으로 운영합니다. 오실로스코프 등 기본 계측에서 시작해 소자 I-V, 회로 성능, 모듈 측정, 프로브 스테이션 칩 측정까지 다룹니다.</p>
+  <p class="note">이론 기초 7과목은 2027년 JOY 공유대학 등을 통해 온라인으로 공개할 예정이며, 전공과 학교에 관계없이 누구나 들을 수 있습니다. 실습 과정은 이론 기초를 마친 뒤 진입합니다.</p>
 </div></section>
 <section class="alt"><div class="wrap two">
   <div>
     <div class="sec-head"><span class="eyebrow">대상</span><h2>수강 대상</h2></div>
     <ul class="steps">
       <li><span class="no">학부</span><div><b>전자공학과 재학생</b><span>회로이론 · 전자회로 이수 후 (2학년 겨울방학부터)</span></div></li>
-      <li><span class="no">외부</span><div><b>타학과 · 타대학</b><span>온라인 선수 과정으로 진입</span></div></li>
+      <li><span class="no">외부</span><div><b>타 학과 · 타 대학</b><span>온라인 이론 기초(2027~ JOY 공유대학 등)를 듣고 실습 과정으로 진입</span></div></li>
       <li><span class="no">대학원</span><div><b>대학원생</b><span>연구에 필요한 설계 · 측정 역량 보완</span></div></li>
       <li><span class="no">유학</span><div><b>유학생</b><span>영어 자막 · 영문 자료 · 통역 지원</span></div></li>
       <li><span class="no">재직</span><div><b>재직자</b><span>FPGA · RF/MMIC 등 단기 과정</span></div></li>
+      <li><span class="no">고교</span><div><b>고등학생</b><span>반도체 진로 특강 · 체험 캠프 (방학 중)</span></div></li>
     </ul>
   </div>
   <div>
