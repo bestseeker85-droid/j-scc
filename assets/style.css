@@ -180,10 +180,12 @@ td.lv{font-weight:700;color:var(--navy);white-space:nowrap} td.num,th.num{text-a
 .chk{display:flex;flex-wrap:wrap;gap:8px 16px;font-weight:400;font-size:14.5px;color:var(--ink)} .chk span{display:inline-flex;align-items:center;gap:6px}
 .consent{grid-column:1/-1;font-size:13.5px;color:var(--muted);display:flex;gap:8px;align-items:flex-start}
 .note{margin-top:14px;color:var(--muted);font-size:14.5px}
+.article{max-width:760px} .article .meta{font-family:var(--mono);font-size:13px;color:var(--muted);margin-bottom:18px} .article .body{font-size:16px;line-height:1.8} .article .body h3{margin:22px 0 6px;font-size:16px} .article .back{display:inline-block;margin-top:28px}
 .map{background:var(--mist);border:1px dashed var(--line);border-radius:12px;min-height:220px;display:grid;place-items:center;color:var(--muted);font-family:var(--mono);font-size:12px}
 footer{background:var(--hero);color:var(--hero-sub);padding:40px 0;font-size:13.5px}
 footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
 footer b{color:#fff;font-family:var(--display);display:block;margin-bottom:8px} footer p{line-height:1.7}
+footer a{color:var(--hero-sub);text-decoration:underline;text-decoration-color:rgba(255,255,255,.3);text-underline-offset:3px} footer a:hover{color:#fff;text-decoration-color:#fff}
 footer .fine{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12.5px}
 @media (max-width:900px){
   .hero .wrap,.two,.form,footer .wrap,.vmg,.greet{grid-template-columns:1fr}
