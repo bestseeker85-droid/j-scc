@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-<g fill="none" stroke="#16294E" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+<g fill="none" stroke="#0E3A5B" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
   <rect x="26" y="26" width="48" height="48" rx="5"/>
   <path d="M36 26V19 M36 74V81 M26 36H19 M74 36H81 M50 26V12 M50 74V88 M26 50H12 M74 50H88 M64 26V19 M64 74V81 M26 64H19 M74 64H81"/>
 </g>
-<g fill="#16294E"><circle cx="50" cy="8" r="4.5"/><circle cx="92" cy="50" r="4.5"/><circle cx="50" cy="92" r="4.5"/><circle cx="8" cy="50" r="4.5"/></g>
-<rect x="35" y="35" width="30" height="30" rx="2" fill="none" stroke="#16294E" stroke-width="2" opacity=".55"/>
-<circle cx="31.5" cy="31.5" r="1.8" fill="#16294E"/>
-<path d="M42 42h16M54 42v12a7 7 0 0 1-14 0" fill="none" stroke="#F2913D" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<g fill="#0E3A5B"><circle cx="50" cy="8" r="4.5"/><circle cx="92" cy="50" r="4.5"/><circle cx="50" cy="92" r="4.5"/><circle cx="8" cy="50" r="4.5"/></g>
+<rect x="35" y="35" width="30" height="30" rx="2" fill="none" stroke="#0E3A5B" stroke-width="2" opacity=".55"/>
+<circle cx="31.5" cy="31.5" r="1.8" fill="#0E3A5B"/>
+<path d="M42 42h16M54 42v12a7 7 0 0 1-14 0" fill="none" stroke="#C7702D" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
