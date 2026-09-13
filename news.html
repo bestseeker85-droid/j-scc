@@ -46,13 +46,11 @@
 </div></header>
 <main class="page" lang="ko">
 <section><div class="wrap">
-  <div class="sec-head"><span class="eyebrow">소식</span><h2>알림마당</h2><p>공지사항 · 교육 일정 · 자료실 · 갤러리</p></div>
+  <div class="sec-head"><span class="eyebrow">소식</span><h2>알림마당</h2><p>공지사항, 교육 일정, 자료실, 갤러리를 분류 탭으로 골라 볼 수 있습니다. 제목을 누르면 상세 내용과 사진을 볼 수 있습니다.</p></div>
+  <div class="tabs" role="tablist"><button data-cat="all" aria-pressed="true">전체</button><button data-cat="notice" aria-pressed="false">공지사항</button><button data-cat="schedule" aria-pressed="false">교육 일정</button><button data-cat="resource" aria-pressed="false">자료실</button><button data-cat="gallery" aria-pressed="false">갤러리</button></div>
   <div class="notice"><!--NOTICES:start:all--><ul>
-    <li><span class="d">2026-11-__</span><span>2026 겨울방학 기초과정 수강생 모집</span><span class="c">모집</span></li>
-    <li><span class="d">2026-09-__</span><span>실무협의체 구성 안내</span><span class="c">공지</span></li>
-    <li><span class="d">2026-08-__</span><span>교육 실습실 · 서버 구축 현황</span><span class="c">소식</span></li>
-    <li><span class="d">2026-07-28</span><span>킥오프 미팅 개최</span><span class="c">행사</span></li>
-  </ul><!--NOTICES:end--></div>
+      <li data-cat="schedule"><span class="d">2026-07-28</span><span><a href="news/1.html">킥오프 미팅 개최</a></span><span class="c">행사</span></li>
+    </ul><!--NOTICES:end--></div>
 </div></section>
 </main>
 <footer><div class="wrap">
@@ -62,6 +60,7 @@
   <div class="fine"><span>© 2026 J-SCC · Jeju Silicon Convergence Center</span><span>교육부 · 제주특별자치도 RISE 사업 지원</span></div>
 </div></footer>
 <script>
+document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){var tabs=b.parentElement;tabs.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});var list=tabs.parentElement.querySelector('.notice');list.querySelectorAll('li').forEach(function(li){li.hidden=(b.dataset.cat!=='all'&&li.dataset.cat!==b.dataset.cat);});});});
 document.querySelectorAll('.subnav a').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});});
 </script>
 </body>

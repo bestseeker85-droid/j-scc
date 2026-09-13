@@ -12,7 +12,8 @@ import io, os, re, sys, json, html, shutil, argparse, datetime
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FIELDS = {"날짜": "date", "분류": "category", "영문 제목 (선택)": "title_en", "본문 (선택)": "body_ko",
           "영문 본문 (선택)": "body_en", "외부 링크 (선택)": "link"}
-CAT_EN = {"공지": "NOTICE", "모집": "OPEN", "행사": "EVENT", "소식": "UPDATE", "자료": "RESOURCE"}
+CAT_EN = {"공지": "NOTICE", "모집": "OPEN", "행사": "EVENT", "소식": "UPDATE", "자료": "RESOURCE", "갤러리": "GALLERY"}
+CAT_TAB = {"공지": "notice", "소식": "notice", "모집": "schedule", "행사": "schedule", "자료": "resource", "갤러리": "gallery"}
 
 def parse_form(body):
     out = {}
@@ -106,7 +107,7 @@ def item_html(n, lang, in_en_dir, at_root):
         href = None
     t = html.escape(title)
     inner = f'<a href="{href}"{extra}>{t}</a>' if href else t
-    return f'<li><span class="d">{n["date"]}</span><span>{inner}</span><span class="c">{html.escape(cat)}</span></li>'
+    return f'<li data-cat="{CAT_TAB.get(n["category"], "notice")}"><span class="d">{n["date"]}</span><span>{inner}</span><span class="c">{html.escape(cat)}</span></li>'
 
 def inject(path, notices, lang, in_en_dir):
     s = io.open(path, encoding="utf-8").read()

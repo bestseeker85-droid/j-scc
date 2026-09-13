@@ -77,16 +77,14 @@
     <div><b>③ 시스템 설계</b><span>디지털 · 시스템 — Verilog · FPGA · RISC-V · SoC</span></div>
     <div><b>④ 검증 · 측정</b><span>후공정 — 테스트(EDS) · 패키징, 소자 · 회로 · 모듈 계측</span></div>
   </div>
-  <p class="note" style="margin-top:16px"><a href="#" data-page="curri-detail">전주기 지도 · 분야별 과정 자세히 →</a></p>
+  <p class="note" style="margin-top:16px"><a href="curriculum-detail.html">전주기 지도 · 분야별 과정 자세히 →</a></p>
 </div></section>
 
 <section><div class="wrap two">
   <div>
     <div class="sec-head"><span class="eyebrow">알림</span><h2>새 소식</h2></div>
     <div class="notice"><!--NOTICES:start:3--><ul>
-      <li><span class="d">2026-11-__</span><span>2026 겨울방학 기초과정 수강생 모집</span><span class="c">모집</span></li>
-      <li><span class="d">2026-09-__</span><span>실무협의체 구성 안내</span><span class="c">공지</span></li>
-      <li><span class="d">2026-07-28</span><span>킥오프 미팅 개최</span><span class="c">행사</span></li>
+      <li data-cat="schedule"><span class="d">2026-07-28</span><span><a href="news/1.html">킥오프 미팅 개최</a></span><span class="c">행사</span></li>
     </ul><!--NOTICES:end--></div>
   </div>
   <div>
@@ -108,6 +106,7 @@
   <div class="fine"><span>© 2026 J-SCC · Jeju Silicon Convergence Center</span><span>교육부 · 제주특별자치도 RISE 사업 지원</span></div>
 </div></footer>
 <script>
+document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){var tabs=b.parentElement;tabs.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});var list=tabs.parentElement.querySelector('.notice');list.querySelectorAll('li').forEach(function(li){li.hidden=(b.dataset.cat!=='all'&&li.dataset.cat!==b.dataset.cat);});});});
 document.querySelectorAll('.subnav a').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});});
 </script>
 </body>

@@ -77,16 +77,14 @@
     <div><b>③ System Design</b><span>Digital and systems — Verilog, FPGA, RISC-V, SoC</span></div>
     <div><b>④ Test &amp; Measurement</b><span>Back-end — EDS test, packaging; device, circuit and module measurement</span></div>
   </div>
-  <p class="note" style="margin-top:16px"><a href="#" data-page="curri-detail">Full-cycle map and courses by field →</a></p>
+  <p class="note" style="margin-top:16px"><a href="curriculum-detail.html">Full-cycle map and courses by field →</a></p>
 </div></section>
 
 <section><div class="wrap two">
   <div>
     <div class="sec-head"><span class="eyebrow">Notice</span><h2>News</h2></div>
     <div class="notice"><!--NOTICES:start:3--><ul>
-      <li><span class="d">2026-11-__</span><span>Recruiting: Winter 2026 foundation courses</span><span class="c">OPEN</span></li>
-      <li><span class="d">2026-09-__</span><span>Working Group formed</span><span class="c">NOTICE</span></li>
-      <li><span class="d">2026-07-28</span><span>Kick-off meeting held</span><span class="c">EVENT</span></li>
+      <li data-cat="schedule"><span class="d">2026-07-28</span><span><a href="news/1.html">Kick-off meeting held</a></span><span class="c">EVENT</span></li>
     </ul><!--NOTICES:end--></div>
   </div>
   <div>
@@ -108,6 +106,7 @@
   <div class="fine"><span>© 2026 J-SCC · Jeju Silicon Convergence Center</span><span>Supported by the Ministry of Education and Jeju Special Self-Governing Province (RISE)</span></div>
 </div></footer>
 <script>
+document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){var tabs=b.parentElement;tabs.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});var list=tabs.parentElement.querySelector('.notice');list.querySelectorAll('li').forEach(function(li){li.hidden=(b.dataset.cat!=='all'&&li.dataset.cat!==b.dataset.cat);});});});
 document.querySelectorAll('.subnav a').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});});
 </script>
 </body>

@@ -20,12 +20,14 @@ body:
     id: category
     attributes:
       label: 분류
+      description: 공지·소식 → 공지사항 탭, 모집·행사 → 교육 일정 탭, 자료 → 자료실 탭, 갤러리 → 갤러리 탭
       options:
         - 공지
         - 모집
         - 행사
         - 소식
         - 자료
+        - 갤러리
     validations:
       required: true
   - type: input
