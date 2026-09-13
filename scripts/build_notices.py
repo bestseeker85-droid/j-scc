@@ -53,6 +53,39 @@ def normalize(issues):
     out.sort(key=lambda x: (x["date"], x["n"]), reverse=True)
     return out
 
+IMG_MD = re.compile(r"!\[([^\]]*)\]\((https?://[^)\s]+)\)")
+IMG_HTML = re.compile(r'(<img[^>]+src=")(https?://[^"]+)(")', re.I)
+
+def localize_images(text, issue_no, root):
+    """이슈 본문의 이미지(드래그 업로드 포함)를 news/img/ 에 저장하고 상대 경로로 바꾼다. 반환: (KO용 텍스트, EN용 텍스트)"""
+    import requests
+    img_dir = os.path.join(root, "news", "img"); os.makedirs(img_dir, exist_ok=True)
+    tok = os.environ.get("GITHUB_TOKEN", "")
+    cache, counter = {}, [0]
+    def fetch(url):
+        if url in cache: return cache[url]
+        counter[0] += 1
+        try:
+            h = {"Authorization": f"Bearer {tok}"} if tok and "github" in url else {}
+            r = requests.get(url, headers=h, timeout=60, allow_redirects=True); r.raise_for_status()
+            ct = r.headers.get("content-type", "").split(";")[0].strip()
+            ext = {"image/png": ".png", "image/jpeg": ".jpg", "image/gif": ".gif", "image/webp": ".webp", "image/svg+xml": ".svg"}.get(ct)
+            if not ext:
+                m = re.search(r"\.(png|jpe?g|gif|webp)(?:$|\?)", url, re.I); ext = "." + (m.group(1).lower().replace("jpeg", "jpg") if m else "png")
+            name = f"{issue_no}-{counter[0]}{ext}"
+            io.open(os.path.join(img_dir, name), "wb").write(r.content)
+            cache[url] = name
+        except Exception as e:
+            print("image skipped:", url, e); cache[url] = None
+        return cache[url]
+    def sub_md(m, prefix):
+        name = fetch(m.group(2)); return f"![{m.group(1)}]({prefix}{name})" if name else m.group(0)
+    def sub_html(m, prefix):
+        name = fetch(m.group(2)); return f'{m.group(1)}{prefix}{name}{m.group(3)}' if name else m.group(0)
+    ko = IMG_HTML.sub(lambda m: sub_html(m, "img/"), IMG_MD.sub(lambda m: sub_md(m, "img/"), text))
+    en = IMG_HTML.sub(lambda m: sub_html(m, "../../news/img/"), IMG_MD.sub(lambda m: sub_md(m, "../../news/img/"), text))
+    return ko, en
+
 def md(text):
     try:
         import markdown
@@ -137,7 +170,17 @@ def main():
         os.makedirs(d, exist_ok=True)
         pre, post = shell_from(os.path.join(root, "news.html" if lang == "ko" else os.path.join("en", "news.html")))
         for n in notices:
-            if n["body_ko"].strip(): write_article(n, lang, d, pre, post, lang == "en")
+            if not n["body_ko"].strip(): continue
+            if "_img" not in n:
+                n["_img"] = {"ko": localize_images(n["body_ko"], n["n"], root), "en": localize_images(n["body_en"], n["n"], root)}
+            n2 = dict(n); n2["body_ko"] = n["_img"]["ko"][0]; n2["body_en"] = n["_img"]["en"][1]
+            write_article(n2, lang, d, pre, post, lang == "en")
+    img_dir = os.path.join(root, "news", "img")
+    if os.path.isdir(img_dir):
+        keep = {str(x["n"]) for x in notices}
+        for f in os.listdir(img_dir):
+            if f.split("-")[0] not in keep: os.remove(os.path.join(img_dir, f))
+    for x in notices: x.pop("_img", None)
     io.open(os.path.join(root, "notices.json"), "w", encoding="utf-8", newline="\n").write(json.dumps(notices, ensure_ascii=False, indent=1))
     print(f"{len(notices)} notices")
 

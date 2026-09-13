@@ -53,8 +53,8 @@ function createJsccForm() {
 
   form.addCheckboxItem()
     .setTitle('개인정보 수집·이용 동의 (필수) / Consent to collection and use of personal data (required)')
-    .setHelpText('수집 항목: 이름·소속·이메일 · 목적: 교육과정 안내·선발 · 보유기간: 사업 종료(2030.2) 후 1년 · 동의를 거부할 수 있으나 거부 시 신청이 제한됩니다. 문의: sylee@jejunu.ac.kr\n' +
-                 'Items: name, affiliation, email · Purpose: course guidance and selection · Retention: one year after the project ends (Feb 2030). Contact: sylee@jejunu.ac.kr')
+    .setHelpText('수집 항목: 이름·소속·이메일 · 목적: 교육과정 안내·선발 · 보유기간: 사업 종료(2030년 2월 예정) 후 1년 · 동의를 거부할 수 있으나 거부 시 신청이 제한됩니다. 문의: sylee@jejunu.ac.kr\n' +
+                 'Items: name, affiliation, email · Purpose: course guidance and selection · Retention: one year after the project ends (planned for February 2030). Contact: sylee@jejunu.ac.kr')
     .setChoiceValues(['동의합니다 / I agree'])
     .setRequired(true);
 

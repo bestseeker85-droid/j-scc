@@ -150,6 +150,7 @@ td.lv{font-weight:700;color:var(--navy);white-space:nowrap} td.num,th.num{text-a
 .roadmap .card h3{margin:6px 0 10px} .roadmap .card ul{margin:0;padding-left:18px;font-size:14px;color:var(--muted)}
 /* greeting */
 .greet{display:grid;grid-template-columns:.9fr 1.1fr;gap:32px;align-items:start}
+.greet.one{grid-template-columns:1fr;max-width:780px} .two.one{grid-template-columns:1fr;max-width:780px}
 .greet .photo{background:var(--mist);border:1px dashed var(--line);border-radius:12px;min-height:260px;display:grid;place-items:center;color:var(--muted);font-family:var(--mono);font-size:12px;text-align:center;padding:20px}
 .greet p{margin-bottom:12px} .greet .sign{font-family:var(--display);color:var(--navy);font-weight:600;margin-top:18px}
 /* governance */
