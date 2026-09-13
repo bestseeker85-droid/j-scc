@@ -210,7 +210,7 @@ footer .fine{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding
 @media (max-width:1000px){
   .hero .wrap,.two,.form,footer .wrap,.vmg,.greet{grid-template-columns:1fr}
   .stats,.cycle,.roadmap,.g3,.g5,.org,.goals,.talent{grid-template-columns:1fr 1fr}
-  .gov{grid-template-columns:1fr 1fr} .gov .c{grid-column:1/-1;grid-row:auto}
+  .gov{grid-template-columns:1fr 1fr} .gov .c{grid-column:1/-1;grid-row:auto;order:-1} .gov .coop{order:9}
   .stat{border-bottom:1px solid var(--line)} .cycle div::after{content:none} nav.menu{display:none}
 }
 @media (max-width:760px){ .brand-name .nm{display:none} .brand-name small{font-size:10px} .cta-band h2{font-size:clamp(20px,5.2vw,26px)} }
