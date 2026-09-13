@@ -1,0 +1,51 @@
+name: 공지 등록 (Post a notice)
+description: 사이트 알림마당에 공지를 올립니다. 제출하면 1~2분 뒤 홈페이지에 자동 반영됩니다. 이슈를 닫으면 공지가 내려갑니다.
+title: "[공지] "
+labels: ["공지"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        아래 칸을 채우고 **Submit new issue** 를 누르면 됩니다. 제목 칸의 `[공지] ` 는 지우지 말고 뒤에 이어 쓰세요.
+        수정하려면 이 이슈를 편집(Edit)하고, 내리려면 이슈를 닫으면(Close) 됩니다.
+  - type: input
+    id: date
+    attributes:
+      label: 날짜
+      description: YYYY-MM-DD 형식 (게시일 또는 행사일)
+      placeholder: "2026-11-03"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: 분류
+      options:
+        - 공지
+        - 모집
+        - 행사
+        - 소식
+        - 자료
+    validations:
+      required: true
+  - type: input
+    id: title_en
+    attributes:
+      label: 영문 제목 (선택)
+      description: 비우면 영문 페이지에도 한글 제목이 표시됩니다.
+      placeholder: "Recruiting: Winter 2026 foundation courses"
+  - type: textarea
+    id: body_ko
+    attributes:
+      label: 본문 (선택)
+      description: 마크다운 사용 가능. 비우면 목록에만 표시되고 상세 페이지는 만들지 않습니다. 이미지는 여기에 끌어다 놓으면 됩니다.
+  - type: textarea
+    id: body_en
+    attributes:
+      label: 영문 본문 (선택)
+  - type: input
+    id: link
+    attributes:
+      label: 외부 링크 (선택)
+      description: 신청 폼, 자료 다운로드 등. 있으면 목록에서 이 주소로 바로 연결됩니다.
+      placeholder: "https://forms.gle/..."

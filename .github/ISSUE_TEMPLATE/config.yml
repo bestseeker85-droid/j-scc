@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 문안·디자인 수정 요청
+    url: https://github.com/OWNER/REPO/issues/new?title=%5B%EC%88%98%EC%A0%95%5D%20&labels=%EC%88%98%EC%A0%95
+    about: 공지가 아닌 페이지 문안·디자인 수정은 이 링크로 요청하세요 (자동 반영되지 않고 담당자가 반영합니다).
