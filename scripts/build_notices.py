@@ -106,7 +106,8 @@ def write_article(n, lang, out_dir, pre, post, in_en_dir):
     pre2 = pre.replace('href="assets/', 'href="../assets/').replace('href="favicon.ico"', 'href="../favicon.ico"').replace('href="../assets/', 'href="../assets/')
     if in_en_dir:
         pre2 = pre2.replace('href="../assets/', 'href="../../assets/').replace('href="../favicon.ico"', 'href="../../favicon.ico"')
-    # 헤더 내비 링크 보정 (상대경로 한 단계 위로)
+    # 헤더 내비 링크 보정 (상대경로 한 단계 위로): 먼저 ../x.html → ../../x.html, 그다음 x.html → ../x.html
+    pre2 = re.sub(r'href="\.\./([\w\-]+\.html)"', r'href="../../\1"', pre2)
     pre2 = re.sub(r'href="(?!https?://|\.\./|#|mailto:)([\w\-]+\.html)"', r'href="../\1"', pre2)
     pre2 = re.sub(r'href="en/([\w\-]+\.html)"', r'href="../en/\1"', pre2)
     pre2 = re.sub(r"<title>.*?</title>", f"<title>{html.escape(title)} · J-SCC</title>", pre2, flags=re.S)
