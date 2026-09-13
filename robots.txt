@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://j-scc.org/sitemap.xml
+Sitemap: https://bestseeker85-droid.github.io/j-scc/sitemap.xml
