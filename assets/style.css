@@ -89,12 +89,12 @@ section{padding:64px 0} section.tight{padding:40px 0} section.alt{background:var
 .goal h3{font-size:16px;margin:6px 0 6px} .goal p{font-size:13.5px;color:var(--muted)}
 /* full-cycle map */
 .fcmap{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:18px 18px 14px;overflow-x:auto}
-.fcmap .groups{display:grid;grid-template-columns:2fr 6fr 2fr 1fr;gap:10px;min-width:880px}
+.fcmap .groups{display:grid;grid-template-columns:3fr 6fr 2fr 1fr;gap:10px;min-width:960px}
 .fcmap .grp{border-top:2px solid var(--line);padding-top:8px}
 .fcmap .grp>.gt{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--accent2);margin-bottom:8px;display:flex;justify-content:space-between;gap:8px}
 .fcmap .grp>.gt em{font-style:normal;color:var(--muted);letter-spacing:0;font-family:var(--body);font-size:11.5px}
 .fcmap .stages{display:grid;gap:6px}
-.fcmap .g2 .stages{grid-template-columns:1fr 1fr} .fcmap .g6 .stages{grid-template-columns:repeat(6,1fr)} .fcmap .g1 .stages{grid-template-columns:1fr}
+.fcmap .g2 .stages{grid-template-columns:1fr 1fr} .fcmap .g3 .stages{grid-template-columns:1fr 1fr 1fr} .fcmap .g6 .stages{grid-template-columns:repeat(6,1fr)} .fcmap .g1 .stages{grid-template-columns:1fr}
 .fcmap .st{border-radius:8px;padding:9px 8px 8px;min-height:92px;display:flex;flex-direction:column;gap:3px;border:1.5px solid var(--line);background:var(--bg)}
 .fcmap .st.l3{background:var(--orange);border-color:var(--orange);color:#fff}
 .fcmap .st.l2{background:color-mix(in srgb, var(--orange) 22%, var(--bg));border-color:color-mix(in srgb, var(--orange) 55%, var(--bg))}
