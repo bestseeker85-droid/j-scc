@@ -19,7 +19,7 @@ function createJsccForm() {
   form.addMultipleChoiceItem()
     .setTitle('구분 / Category')
     .setChoiceValues(['제주대 전자공학과 학생 / JNU electronics student', '제주대 타 학과 학생 / JNU student, other department',
-                      '타 대학 학생 / Student at another university', '대학원생 / Graduate student', '유학생 / International student',
+                      '제주 지역 다른 학교 학생 / Student at another school in Jeju', '대학원생 / Graduate student', '유학생 / International student',
                       '재직자 / Working engineer', '고등학생·교사 / High-school student or teacher', '기업·기관 / Company or institution'])
     .setRequired(true);
 
